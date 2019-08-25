@@ -1,0 +1,28 @@
+<project name="test" default="test">
+
+	<target name="test">
+		<echo> File System Tasks </echo>
+		
+		<delete dir="build"/>
+		<mkdir dir="build/classes"/>
+		
+			
+	
+		<copy file="HelloWorld.jar" todir="build"/>
+		
+		
+		<copy todir="build">
+			<fileset dir="src">
+				<include name="**/*.java" />
+				<exclude name="**/*.html"/>
+				
+			</fileset>
+		</copy>
+		
+		<move file="HelloWorld.jar" tofile="Hello.jar"/>
+		<move file="Hello.jar" todir="build" /> 
+	
+	
+	</target>
+	
+</project>
